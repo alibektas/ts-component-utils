@@ -2,7 +2,7 @@
   "name": "app-utils-ts",
   "version": "0.0.1",
   "description": "Utility classes and functions to make creating desktop/web applications simpler.",
-  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,8 +13,7 @@
   "author": "Ali Bektas",
   "license": "ISC",
   "dependencies": {
-    "hotkeys-js": "^3.10.0",
-    "utils-ts": "github:alibektas/utils-ts"
+    "hotkeys-js": "^3.10.0"
   },
   "devDependencies": {
     "eslint": "^8.25.0"
