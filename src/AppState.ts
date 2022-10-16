@@ -14,11 +14,13 @@ export abstract class AppState<StateName extends string, StateInput> extends Sta
 
 	override onEnter(o: StateInput) {
 		super.onEnter(o);
+		this.addEventListeners();
 		this.enter_hotkey_scope();
 	}
 
 	override onExit() {
 		this.exit_hotkey_scope();
+		this.removeEventListeners();
 		return super.onExit();
 	}
 
@@ -33,14 +35,10 @@ export abstract class AppState<StateName extends string, StateInput> extends Sta
 	}
 
 
-	protected addEventListeners() {
-		throw new Error("NotImplemented");
-	}
+	protected addEventListeners() {}
 
 
-	protected removeEventListeners() {
-		throw new Error("NotImplemented");
-	}
+	protected removeEventListeners() {}
 
 
 	create_hotkey( key : string , method : KeyHandler) {
