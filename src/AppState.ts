@@ -17,8 +17,8 @@ export abstract class AppState<StateName extends string, StateInput> extends Sta
 	}
 
 	override onExit() {
-		super.onExit();
 		this.exit_hotkey_scope();
+		return super.onExit();
 	}
 
 	/** Introduce all the shortcuts here using hotkeys-js lib. */

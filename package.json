@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "hotkeys-js": "^3.10.0",
-    "utils-ts": "github:alibektas/utils-ts"
+    "utils-ts": "file:../utils-ts"
   },
   "devDependencies": {
     "eslint": "^8.25.0"
