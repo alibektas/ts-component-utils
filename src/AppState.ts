@@ -2,22 +2,21 @@ import hotkeys, { type KeyHandler } from "hotkeys-js";
 import { State } from "utils-ts";
 
 export abstract class AppState<StateName extends string, StateInput> extends State<StateName , StateInput>  {
-	constructor(protected state_name: StateName) {
+	constructor(state_name : StateName) {
 		super(state_name)
 	}
 
-	protected _state: StateInput | null = null;
 
 	get name(): StateName {
 		return this.state_name;
 	}
 
-	onEnter(o: StateInput) {
+	override onEnter(o: StateInput) {
 		super.onEnter(o);
 		this.enter_hotkey_scope();
 	}
 
-	onExit() {
+	override onExit() {
 		super.onExit();
 		this.exit_hotkey_scope();
 	}
