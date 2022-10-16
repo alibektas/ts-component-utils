@@ -1,7 +1,10 @@
 import hotkeys, { type KeyHandler } from "hotkeys-js";
+import { State } from "utils-ts";
 
-export abstract class AppState<StateName extends string, StateInput> {
-	constructor(protected state_name: StateName) {}
+export abstract class AppState<StateName extends string, StateInput> extends State<StateName , StateInput>  {
+	constructor(protected state_name: StateName) {
+		super(state_name)
+	}
 
 	protected _state: StateInput | null = null;
 
@@ -10,13 +13,12 @@ export abstract class AppState<StateName extends string, StateInput> {
 	}
 
 	onEnter(o: StateInput) {
-		console.log(`utils-ts onEnter() , state : ${this.state_name}`);
-		this._state = o;
+		super.onEnter(o);
 		this.enter_hotkey_scope();
 	}
 
 	onExit() {
-		console.log(`utils-ts onExit() , state : ${this.state_name}`);
+		super.onExit();
 		this.exit_hotkey_scope();
 	}
 
