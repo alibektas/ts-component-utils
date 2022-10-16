@@ -1,6 +1,7 @@
 {
   "name": "app-utils-ts",
   "version": "0.0.1",
+  "main": "index.d.ts",
   "description": "Utility classes and functions to make creating desktop/web applications simpler.",
   "types": "index.d.ts",
   "files": [
