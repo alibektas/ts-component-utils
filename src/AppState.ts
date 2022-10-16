@@ -1,6 +1,7 @@
 import hotkeys, { type KeyHandler } from "hotkeys-js";
 import { State } from "utils-ts";
 
+
 export abstract class AppState<StateName extends string, StateInput> extends State<StateName , StateInput>  {
 	constructor(state_name : StateName) {
 		super(state_name)
