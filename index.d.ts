@@ -1,1 +1,1 @@
-export { AppState } from "./src/AppState";
+export { ComponentState } from "./src/ComponentState";
