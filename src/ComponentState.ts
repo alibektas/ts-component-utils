@@ -3,6 +3,9 @@ import { State } from "utils-ts";
 
 
 export abstract class ComponentState<StateName extends string, StateInput> extends State<StateName , StateInput>  {
+	
+	event_listeners : Array<[string , EventListener]> = [];
+
 	constructor(state_name : StateName) {
 		super(state_name)
 	}
@@ -35,10 +38,23 @@ export abstract class ComponentState<StateName extends string, StateInput> exten
 	}
 
 
-	protected addEventListeners() {}
+	private addEventListeners() {
+		console.log("Add event listeners");
+		this.event_listeners.forEach(
+			(e) => {
+				window.addEventListener( e[0] , e[1]);
+			}
+		)
+	}
 
 
-	protected removeEventListeners() {}
+	private removeEventListeners() {
+		this.event_listeners.forEach(
+			(e) => {
+				window.removeEventListener( e[0] , e[1]);
+			}
+		)
+	}
 
 
 	create_hotkey( key : string , method : KeyHandler) {
