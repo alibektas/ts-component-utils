@@ -5,6 +5,7 @@ import { State } from "utils-ts";
 export abstract class ComponentState<StateName extends string, StateInput> extends State<StateName , StateInput>  {
 	
 	event_listeners : Array<[string , EventListener]> = [];
+	protected keypress_events : Array<[string , string , KeyHandler]> = [];
 
 	constructor(state_name : StateName) {
 		super(state_name)
