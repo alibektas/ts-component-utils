@@ -40,7 +40,7 @@ export abstract class ComponentState<StateName extends string, StateInput> exten
 
 
 	private addEventListeners() {
-		console.log("Add event listeners");
+		console.log("[COMPONENT-UTILS-TS] Add event listeners");
 		this.event_listeners.forEach(
 			(e) => {
 				window.addEventListener( e[0] , e[1]);
@@ -59,9 +59,9 @@ export abstract class ComponentState<StateName extends string, StateInput> exten
 
 
 	create_hotkey( key : string , method : KeyHandler) {
-		console.log("Create hotkey");
+		console.log("[COMPONENT-UTILS-TS] Create hotkey");
 		hotkeys(key , this.name , ( ke  , ht ) => {
-			console.log(`State ${this.state_name} keypress : ${key} event is fired.`);
+			console.log(`[COMPONENT-UTILS-TS] State ${this.state_name} keypress : ${key} event is fired.`);
 			method(ke , ht);
 		});
 	}
