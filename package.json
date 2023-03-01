@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/alibektas/app-utils-ts"
+    "url": "github.com/alibektas/ts-component-utils"
   },
   "author": "Ali Bektas",
   "license": "ISC",
   "dependencies": {
     "hotkeys-js": "^3.10.0",
-    "utils-ts": "file:../utils-ts"
+    "utils-ts": "github:alibektas/utils-ts"
   },
   "devDependencies": {
     "eslint": "^8.25.0"
